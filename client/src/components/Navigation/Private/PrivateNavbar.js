@@ -22,16 +22,17 @@ const PrivateNavbar = () => {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="/expenses"  className="btn btn-outline-danger me-2 mb-2 text-white " >Expenses List</Nav.Link>
-            <Nav.Link href="/incomes" className="btn btn-outline-warning me-2 mb-2 text-white">Income List</Nav.Link>
-            <Nav.Link href="/profile"  className="btn btn-outline-primary me-2 mb-2 text-white">Profile</Nav.Link>
+            <Nav.Link href="/expenses"  className="btn btn-outline-danger me-2 mb-2 text-white t-2" >Expenses List</Nav.Link>
+            <Nav.Link href="/incomes" className="btn btn-outline-success me-2 mb-2 text-white">Income List</Nav.Link>
+            <Nav.Link href="/dashboard" className="btn btn-outline-warning me-2 mb-2 text-white">Dashboard</Nav.Link>
           </Nav>
           <Nav>
-            <Form className="d-flex">
-            <Nav.Link eventKey={2} href="/add-expense" className="btn btn-danger me-2 mb-2 text-light">New Expense</Nav.Link>
-            <Nav.Link eventKey={2} href="/add-income" className="btn btn-info me-2 mb-2 text-dark">New Income</Nav.Link>
-            <Button variant="warning mb-2 " onClick={() => dispatch(logout())}>Logout</Button>
-          </Form>
+            <Nav.Link href="/profile"  className="btn btn-outline-primary me-2 mb-2 text-white">Profile</Nav.Link>
+            <Nav.Link eventKey={3} href="/add-expense" className="btn btn-outline-danger me-2 mb-2 text-light">New Expense</Nav.Link>
+            <Nav.Link eventKey={3} href="/add-income" className="btn btn-outline-success me-2 mb-2 text-white " >New Income</Nav.Link>
+            <Form>
+              <Button variant="outline-warning mb-0 w-100 " onClick={() => dispatch(logout())}  >Logout</Button>
+            </Form>
           </Nav>
         </Navbar.Collapse>
       </Container>
