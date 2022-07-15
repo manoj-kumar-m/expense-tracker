@@ -57,6 +57,31 @@ const PrivateNavbar = () => {
           </div>
         </div>
       </nav>
+
+
+
+      <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" className="">
+      <Container>
+        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+        <Navbar.Collapse id="responsive-navbar-nav">
+          <Nav className="me-auto">
+            <Nav.Link href="/expenses" className="btn btn-outline-danger me-2 mb-2" > Expenses List</Nav.Link>
+            <Nav.Link href="/incomes" className="btn btn-outline-warning me-2 mb-2">Income List</Nav.Link>
+            <Nav.Link href="/dashboard" className="btn btn-outline-primary me-2 mb-2">Dashboard</Nav.Link>
+            <Nav.Link href="/profile" className="btn btn-outline-primary me-2 mb-2">Profile</Nav.Link>
+          </Nav>
+          <Form className="d-flex" action="/">
+          <Nav.Link href="/dashboard" className="btn btn-outline-primary me-2 mb-2">New Expense</Nav.Link>
+            <Nav.Link href="/profile" className="btn btn-outline-primary me-2 mb-2">New Income</Nav.Link>
+            <Nav.Link href="/" className="btn btn-outline-primary me-2 mb-2">Button</Nav.Link>
+          </Form>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
+
+
+
+
     </>
   );
 };

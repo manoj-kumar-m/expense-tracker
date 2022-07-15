@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { userProfileAction } from "../../redux/slices/users/usersSlices";
-import GraphDtata from "../../components/GraphDtata";
+// import GraphDtata from "../../components/GraphDtata";
 import calcTransaction from "../../utils/accountStatistics";
 import UserProfileStats from "./UserProfileStats";
 import LoadingComponent from "../../components/Loading";
@@ -11,6 +11,8 @@ import ErrorDisplayMessage from "../../components/ErrorDisplayMessage";
 const Profile = () => {
   const dispatch = useDispatch();
   const history = useHistory();
+  var today = new Date();
+  var date =  today.getDate()  + '-' + (today.getMonth() + 1) + '-' + today.getFullYear();
   useEffect(() => {
     dispatch(userProfileAction());
   }, [dispatch]);
@@ -36,9 +38,9 @@ const Profile = () => {
         <section className="py-5">
           <div className="container">
             <div className="position-relative p-8 border rounded-2">
-              <div className="d-flex mb-6 align-items-center">
+              <div className="d-flex mb-6 align-items-center justify-content-center p-3">
                 <img
-                  className="img-fluid me-4 rounded-2"
+                  className="img-fluid me-4 rounded-circle p-4"
                   //   style="width: 64px; height: 64px;"
                   src="https://images.unsplash.com/photo-1593789382576-54f489574d26?ixlib=rb-1.2.1&amp;q=80&amp;fm=jpg&amp;crop=faces&amp;cs=tinysrgb&amp;fit=crop&amp;h=128&amp;w=128"
                   alt=""
@@ -54,7 +56,7 @@ const Profile = () => {
                     </span>
                   </h6>
                   <p className="mb-0">{profile?.email}</p>
-                  <p className="mb-0">Date Joined: 12-Jan-1999</p>
+                      <p className="mb-0">Date Joined: {date}</p>
                   <button
                     onClick={() =>
                       history.push({
@@ -67,13 +69,10 @@ const Profile = () => {
                     className="btn"
                   >
                     Edit Profile
-                    <i class="bi bi-pen fs-3 m-3 text-primary"></i>
+                    <i class="bi bi-pen fs-4 m-3 text-primary w-10"></i>
                   </button>
                 </div>
-                <GraphDtata
-                  income={incResult?.sumTotal}
-                  expenses={incResult?.sumTotal}
-                />
+                
               </div>
 
               <p className="mb-8"> </p>
@@ -93,13 +92,13 @@ const Profile = () => {
               <div className="d-flex align-items-center justify-content-center">
                 <button
                   onClick={() => history.push("/user-expenses")}
-                  className="btn me-4 w-100 btn-danger d-flex align-items-center justify-content-center"
+                  className="btn w-100 btn-danger d-flex align-items-center justify-content-center m-2"
                 >
                   <span>View Expenses History</span>
                 </button>
                 <button
                   onClick={() => history.push("/user-income")}
-                  className="btn w-100 btn-outline-success d-flex align-items-center justify-content-center"
+                  className="btn w-100 btn-success d-flex align-items-center justify-content-center m-2"
                 >
                   <span>View Income History</span>
                 </button>

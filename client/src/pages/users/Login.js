@@ -44,7 +44,7 @@ const Login = () => {
 
   return (
     <section
-      style={{ height: "100vh" }}
+      style={{ height: "88.5vh" }}
       className="position-relative py-5  overflow-hidden bg-warning"
     >
       <div className="d-none d-md-block position-absolute top-0 start-0 bg-dark w-75 h-100"></div>
